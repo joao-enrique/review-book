@@ -1,7 +1,8 @@
-    import {create} from "zustand";
-    import AsyncStorage from "@react-native-async-storage/async-storage";
+import {create} from "zustand";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { API_URL } from "@/constants/api";
 
-    export const useAuthStore = create((set) => ({
+export const useAuthStore = create((set) => ({
         user: null,
         token: null,
         isLoading: false,
@@ -9,7 +10,7 @@
         register: async (username, email,password) => {
             set({ isLoading: true });
             try {
-                const response = await fetch("https://review-book-hhav.onrender.com/api/auth/register", {
+                const response = await fetch(`${API_URL}/api/auth/register`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -42,7 +43,7 @@
         login: async (email, password) => {
             set({ isLoading: true })
             try {
-                const response = await fetch("https://review-book-hhav.onrender.com/api/auth/login", {
+                const response = await fetch(`${API_URL}/api/auth/login`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -89,4 +90,5 @@
             set({ token: null, user: null})
         }
 
-    }))
+    })
+)

@@ -1,37 +1,43 @@
-import SafeScreen from '@/components/SafeScreen'
+import SafeScreen from '@/components/SafeScreen';
 import { useAuthStore } from '@/store/authStore';
-import { Stack, useRouter, useSegments } from 'expo-router'
-import { useEffect } from 'react';
-import { StatusBar } from 'react-native'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { Stack, useRouter, useSegments } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function RootLayout() {
   const router = useRouter();
   const segments = useSegments();
+  const { checkAuth, user, token } = useAuthStore();
 
-  const {checkAuth, user, token} = useAuthStore();
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    checkAuth();
-  },[])
+    checkAuth().finally(() => setIsReady(true));
+  }, []);
 
-  // handle navigation based  on the auth state
   useEffect(() => {
-    const inAuthScreen = segments[0] === "(auth)"
-    const isSignedIn = user && token;
+    if (!isReady) return;
 
-    if(!isSignedIn && !inAuthScreen) router.replace("/(auth)");
-    if(isSignedIn && inAuthScreen) router.replace("/(tabs)");
-  },[user, token,segments])
+    const inAuthGroup = segments[0] === "(auth)";
+    const isSignedIn = !!(user && token);
+
+    if (!isSignedIn && !inAuthGroup) {
+      router.replace("/(auth)");
+    } else if (isSignedIn && inAuthGroup) {
+      router.replace("/(tabs)");
+    }
+  }, [isReady, user, token, segments]);
+
   return (
     <SafeAreaProvider>
-        <SafeScreen>
-            <Stack screenOptions={{headerShown: false}}>
-                <Stack.Screen name="(tabs)"/>
-                <Stack.Screen name="(auth)"/>
-            </Stack>
-        </SafeScreen>
-        <StatusBar barStyle={"dark-content"}/>
+      <SafeScreen>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="(auth)" />
+        </Stack>
+      </SafeScreen>
+      <StatusBar barStyle="dark-content" />
     </SafeAreaProvider>
-  )
+  );
 }
