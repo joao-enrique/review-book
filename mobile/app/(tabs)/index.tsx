@@ -141,9 +141,6 @@ export default function Home() {
           </View>
         }
       />
-      <TouchableOpacity onPress={logout}>
-        <Text>Logout</Text>
-      </TouchableOpacity>
     </View>
   )
 }
