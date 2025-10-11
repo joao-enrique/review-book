@@ -10,7 +10,7 @@ export const useAuthStore = create((set) => ({
         register: async (username, email,password) => {
             set({ isLoading: true });
             try {
-                const response = await fetch(`${API_URL}/api/auth/register`, {
+                const response = await fetch(`${API_URL}/auth/register`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export const useAuthStore = create((set) => ({
         login: async (email, password) => {
             set({ isLoading: true })
             try {
-                const response = await fetch(`${API_URL}/api/auth/login`, {
+                const response = await fetch(`${API_URL}/auth/login`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
