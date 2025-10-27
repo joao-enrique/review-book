@@ -21,13 +21,13 @@
 - 🎨 **Interface intuitiva** → Foco em experiência do usuário  
 
 <div align="right">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo" />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo" />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="40" alt="mongodb logo" />
+  <img src="https://img.shields.io/badge/React_Native-0C1552?style=for-the-badge&logo=react&logoColor=%2361DAFB" height="40" alt="react logo" />
   <img width="12" />
   <img src="https://img.shields.io/badge/Expo-000000?style=for-the-badge&logo=expo&logoColor=white" height="30" alt="expo logo" />
+  <img width="12" />
+  <img src="https://img.shields.io/badge/node.js-13700A?style=for-the-badge&logo=node.js&logoColor=white" height="40" alt="nodejs logo" />
+  <img width="12" />
+  <img src="https://img.shields.io/badge/MongoDB-13700A?style=for-the-badge&logo=mongodb&logoColor=white" height="40" alt="mongodb logo" />
 </div>
 
 ---
