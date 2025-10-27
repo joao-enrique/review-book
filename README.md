@@ -2,12 +2,7 @@
 
 <div align="center">
     <a href="https://jedev1.itch.io/book-review" target="_blank"> 
-        <img src="preview-for-project.png" alt="Preview do app" /> 
-    </a> 
-</div>
-<div align="center">
-    <a href="https://jedev1.itch.io/book-review" target="_blank"> 
-        <img src="button.png" alt="Preview do app" /> 
+        <img src="https://i.ibb.co/PvmND5Sk/CONFIRA-O-PROJETO-AQUI-1.png" alt="Preview do app" /> 
     </a> 
 </div>
 
