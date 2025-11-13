@@ -28,7 +28,7 @@
 ---
 
 ## 💡 Sobre o Projeto
-Este aplicativo foi desenvolvido para **para leitores, que queiram fazer resenhas de seus livros**.  
+Este aplicativo foi desenvolvido para **leitores, que queiram fazer resenhas de seus livros**.  
 O aplicativo foi construído com **React Native, Node.js, Mongodb e estilização nativa**, com foco em **design moderno, responsividade e performance**.
 
 ---
